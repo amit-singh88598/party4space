@@ -9,10 +9,9 @@ import "react-alice-carousel/lib/alice-carousel.css";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgrounColor: theme.palette.primary.main,
-    marginTop: 120,
   },
   mainCard: {
-    padding: 10,
+    padding: 40,
     marginLeft: 70,
     [theme.breakpoints.down("sm")]: {
       marginLeft: 0,
@@ -30,9 +29,9 @@ export default function Banner() {
 
   return (
     <div className={classes.root}>
-      <Card elevation={0} className={classes.mainCard}>
+      <Card elevation={4} className={classes.mainCard}>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={12}>
+          <Grid item xs={12} sm={10}>
             <AliceCarousel
               disableButtonsControls={true}
               infinite={true}
@@ -46,9 +45,7 @@ export default function Banner() {
               <img src="/people.png" className={classes.img} alt="" />
             </AliceCarousel>
           </Grid>
-          {/* <Grid item xs={12} sm={4}> */}
-          {/* <InquiryForm /> */}
-          {/* </Grid> */}
+          <Grid item xs={12} sm={2}></Grid>
         </Grid>
       </Card>
     </div>

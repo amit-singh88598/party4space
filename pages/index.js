@@ -10,7 +10,7 @@ export default function Home() {
       <Header />
       <Card>
         <Typography>This is Home Page</Typography>
-        <Banner />
+        {/* <Banner /> */}
       </Card>
     </div>
   );

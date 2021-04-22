@@ -1,15 +1,22 @@
-import { Container } from "@material-ui/core";
+import { Container, Typography } from "@material-ui/core";
 import React from "react";
 import Banner from "../../Components/Vendor/banner";
-import Home from "../../Components/Vendor/home";
 import VendorHeader from "../../Layouts/vendorHeader";
 
 function HomePage(props) {
   return (
     <div>
       <VendorHeader>
-        {/* <Container maxWidth="false" style={{ width: "95vw" }}> */}
-        <Home />
+        <Typography
+          style={{
+            fontSize: "2.2em",
+            fontWeight: 500,
+            padding: 20,
+            marginTop: 20,
+          }}
+        >
+          Your Space
+        </Typography>
       </VendorHeader>
       <Banner />
       {/* </Container> */}
