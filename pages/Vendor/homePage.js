@@ -11,14 +11,14 @@ function HomePage(props) {
           style={{
             fontSize: "2.2em",
             fontWeight: 500,
-            padding: 20,
-            marginTop: 20,
+            paddingLeft: 20,
+            marginTop: 50,
           }}
         >
           Your Space
         </Typography>
+        <Banner />
       </VendorHeader>
-      <Banner />
       {/* </Container> */}
     </div>
   );
