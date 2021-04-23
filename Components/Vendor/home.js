@@ -42,7 +42,7 @@ const Space = [
     address: " BHIKAIJI CAMA PLACE RING ROAD, Gurugram 248774",
   },
   {
-    img1: "/hotel7.jpg",
+    img1: "/hotel6.jpg",
     name: "Hyatt Regency Delhi",
     address: " BHIKAIJI CAMA PLACE RING ROAD, Chandigarh 248001",
   },

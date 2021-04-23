@@ -32,6 +32,7 @@ import {
   CloudUpload,
   EventNote,
   ExitToApp,
+  Home,
   HomeWork,
   ImportContacts,
   Inbox,
@@ -319,12 +320,27 @@ export default function VendorHeader(props) {
             })}
             onMouseOver={handleDrawerOpen}
             onMouseLeave={handleDrawerClose}
-            onClick={() => router.push("#")}
+            onClick={() => router.push("/Vendor/homePage")}
+          >
+            <ListItemIcon>
+              <Home style={{ color: "white" }} />
+            </ListItemIcon>
+            <ListItemText primary={"Home"} />
+          </ListItem>
+          <ListItem
+            button
+            className={clsx(classes.drawer, {
+              [classes.drawerOpen]: open,
+              [classes.drawerClose]: !open,
+            })}
+            onMouseOver={handleDrawerOpen}
+            onMouseLeave={handleDrawerClose}
+            onClick={() => router.push("/Vendor/bookingCustomerDetails")}
           >
             <ListItemIcon>
               <ImportContacts style={{ color: "white" }} />
             </ListItemIcon>
-            <ListItemText primary={"Booking Record"} />
+            <ListItemText primary={"Booking Details"} />
           </ListItem>
           <ListItem
             button
