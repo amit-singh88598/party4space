@@ -35,12 +35,14 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     borderTop: 0,
     borderLeft: 0,
-    marginTop: 30,
+    marginTop: 40,
     borderRadius: 30,
     padding: 15,
-    marginBottom: 20,
     [theme.breakpoints.up("md")]: {
       width: 430,
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 0,
     },
   },
   title: {
@@ -59,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(15),
     height: theme.spacing(15),
   },
+  imgStyle: { marginLeft: 100, marginTop: 50 },
   contentCenter: {
     display: "flex",
     justifyContent: "center",
@@ -155,7 +158,9 @@ function SignUp(props) {
     <div>
       <Grid container spacing={0}>
         <Grid item xs={12} sm={6}>
-          <img className={classes.mobBreakpoint} src="/" />
+          <div className={classes.imgStyle}>
+            <img className={classes.mobBreakpoint} src="/signin.svg" />
+          </div>
         </Grid>
         <Grid item xs={12} sm={6}>
           <div className={classes.root}>

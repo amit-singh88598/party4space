@@ -1,20 +1,32 @@
 import * as React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Button, Card, Grid, Typography } from "@material-ui/core";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgrounColor: theme.palette.primary.main,
   },
+  heading: {
+    fontSize: "2.2em",
+    fontWeight: 500,
+    paddingLeft: 20,
+    marginTop: 50,
+  },
   mainCard: {
     padding: 10,
-    margin: 10,
+    margin: 5,
     borderRadius: 20,
   },
   img: {
     width: "100%",
     height: "40vh",
     objectFit: "cover",
+  },
+  btnStyle: {
+    display: "flex",
+    justifyContent: "center",
+    marginTop: 40,
   },
 }));
 
@@ -36,11 +48,13 @@ const Space = [
   },
 ];
 
-export default function Banner() {
+export default function Home() {
   const classes = useStyles();
+  const router = useRouter();
 
   return (
     <div className={classes.root}>
+      <Typography className={classes.heading}>Your Space</Typography>
       {Space.map((item, index) => (
         <Card key={index} elevation={4} className={classes.mainCard}>
           <Grid container spacing={2}>
@@ -56,18 +70,13 @@ export default function Banner() {
               <Typography style={{ fontSize: "1em", marginTop: 20 }}>
                 {item.address}
               </Typography>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: 40,
-                }}
-              >
+              <div className={classes.btnStyle}>
                 <Button
                   variant="outlined"
                   color="primary"
                   href="#outlined-buttons"
                   style={{ borderRadius: 50 }}
+                  onClick={() => router.push("/Vendor/spaceDetails")}
                 >
                   Know More
                 </Button>

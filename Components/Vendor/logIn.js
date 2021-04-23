@@ -39,9 +39,12 @@ const useStyles = makeStyles((theme) => ({
     borderLeft: 0,
     borderRadius: 30,
     padding: 15,
-    marginTop: 40,
+    marginTop: 60,
     [theme.breakpoints.up("md")]: {
       width: 420,
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 0,
     },
   },
   btnStyle: {
@@ -134,7 +137,9 @@ function LogIn(props) {
     <div>
       <Grid container spacing={0}>
         <Grid item xs={12} sm={6}>
-          <img className={classes.mobBreakpoint} src="/" />
+          <div style={{ marginTop: 50, marginLeft: 100 }}>
+            <img className={classes.mobBreakpoint} src="/signin.svg" />
+          </div>
         </Grid>
         <Grid item xs={12} sm={6}>
           <div>
