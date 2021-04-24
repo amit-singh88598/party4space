@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     width: "100%",
-    height: "70vh",
+    height: "80vh",
     objectFit: "cover",
   },
 }));

@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function BookingCustomerDetail(props) {
+function UpcomingBookingDetail(props) {
   const classes = useStyles();
   const router = useRouter();
   return (
@@ -219,4 +219,4 @@ function BookingCustomerDetail(props) {
   );
 }
 
-export default BookingCustomerDetail;
+export default UpcomingBookingDetail;

@@ -48,7 +48,7 @@ const Space = [
   },
 ];
 
-export default function Home() {
+export default function YourSpaceDetail() {
   const classes = useStyles();
   const router = useRouter();
 

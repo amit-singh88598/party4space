@@ -335,12 +335,12 @@ export default function VendorHeader(props) {
             })}
             onMouseOver={handleDrawerOpen}
             onMouseLeave={handleDrawerClose}
-            onClick={() => router.push("/Vendor/bookingCustomerDetails")}
+            onClick={() => router.push("/Vendor/customerBookingRecords")}
           >
             <ListItemIcon>
               <ImportContacts style={{ color: "white" }} />
             </ListItemIcon>
-            <ListItemText primary={"Booking Details"} />
+            <ListItemText primary={"Booking Records"} />
           </ListItem>
           <ListItem
             button
@@ -350,12 +350,12 @@ export default function VendorHeader(props) {
             })}
             onMouseOver={handleDrawerOpen}
             onMouseLeave={handleDrawerClose}
-            onClick={() => router.push("/Cricket/cricket")}
+            onClick={() => router.push("/Vendor/yourSpace")}
           >
             <ListItemIcon>
               <HomeWork style={{ color: "white" }} />
             </ListItemIcon>
-            <ListItemText primary={"Space Details"} />
+            <ListItemText primary={" Your Space"} />
           </ListItem>
           <ListItem
             button
@@ -380,7 +380,7 @@ export default function VendorHeader(props) {
             })}
             onMouseOver={handleDrawerOpen}
             onMouseLeave={handleDrawerClose}
-            onClick={() => router.push("#")}
+            onClick={() => router.push("/Vendor/upcomingBookingDetails")}
           >
             <ListItemIcon>
               <EventNote style={{ color: "white" }} />
