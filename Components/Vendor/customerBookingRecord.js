@@ -139,36 +139,18 @@ function CustomerBookingRecord(props) {
                     <Typography gutterBottom variant="subtitle1">
                       amitsingh992728@gmail.com
                     </Typography>
-                    {/* <Chip
-                        variant="outlined"
-                        color="primary"
-                        style={{ cursor: "pointer", marginTop: 30 }}
-                        size="small"
-                        label={"njkdsnjfsndfkjd"}
-                      /> */}
                   </Grid>
                 </Grid>
 
                 <Grid item>
                   <Button
-                    // style={{ borderRadius: 20 }}
                     variant="contained"
                     color="primary"
                     onClick={() => router.push("/Vendor/bookingRecords")}
                   >
                     Details
                   </Button>
-                  <Grid style={{ marginTop: 70 }}>
-                    {/* <IconButton>
-                      <Chat />
-                    </IconButton> */}
-                    {/* <Rating
-                      name="read-only"
-                      value={"dsjnsdnm dnm"}
-                      size="small"
-                      readOnly
-                    /> */}
-                  </Grid>
+                  <Grid style={{ marginTop: 70 }}></Grid>
                 </Grid>
               </Grid>
             </Grid>

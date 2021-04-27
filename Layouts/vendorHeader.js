@@ -365,7 +365,7 @@ export default function VendorHeader(props) {
             })}
             onMouseOver={handleDrawerOpen}
             onMouseLeave={handleDrawerClose}
-            onClick={() => router.push("#")}
+            onClick={() => router.push("/Vendor/chats")}
           >
             <ListItemIcon>
               <Chat style={{ color: "white" }} />

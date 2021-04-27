@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     fontSize: "2.2em",
-    fontWeight: 500,
+    fontWeight: 600,
     paddingLeft: 20,
     marginTop: 50,
   },
