@@ -17,6 +17,11 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: 600,
     paddingLeft: 20,
   },
+  mobHeading: {
+    fontSize: "1.8em",
+    fontWeight: 600,
+    paddingLeft: 20,
+  },
   cardStyle: {
     padding: 10,
     position: "webkitsticky",
@@ -26,6 +31,10 @@ const useStyle = makeStyles((theme) => ({
   imagedesktop: {
     width: theme.spacing(8),
     height: theme.spacing(8),
+  },
+  imageMob: {
+    width: theme.spacing(6),
+    height: theme.spacing(6),
   },
   breakpoints: {
     marginTop: 10,
@@ -250,20 +259,20 @@ function ChatSection(props) {
             justifyContent: "center",
           }}
         >
-          <Typography className={classes.heading}>Amit Singh</Typography>
+          <Typography className={classes.mobHeading}>Akash Kumar</Typography>
         </div>
         <Divider />
         <div className={classes.scroll} id="scroller">
-          <Card style={{ padding: 20 }} elevation={0}>
+          <Card style={{ padding: 5, marginTop: 15 }} elevation={0}>
             <div style={{ display: "flex" }}>
               <Avatar
                 alt="Remy Sharp"
                 src="/avatar.png"
-                className={classes.imagedesktop}
+                className={classes.imageMob}
               />
               <Card
                 style={{
-                  width: 500,
+                  width: 200,
                   borderBottomRightRadius: 30,
                   borderBottomLeftRadius: 30,
                   borderTopRightRadius: 30,
@@ -277,10 +286,11 @@ function ChatSection(props) {
                 </Typography>
               </Card>
             </div>
+
             <div style={{ display: "flex", float: "right", marginTop: 20 }}>
               <Card
                 style={{
-                  width: 500,
+                  width: 200,
                   borderBottomRightRadius: 30,
                   borderBottomLeftRadius: 30,
                   borderTopLeftRadius: 30,
@@ -298,35 +308,14 @@ function ChatSection(props) {
               <Avatar
                 alt="Remy Sharp"
                 src="/avatar.png"
-                className={classes.imagedesktop}
+                className={classes.imageMob}
               />
             </div>
-            <div style={{ display: "flex", marginTop: 130 }}>
-              <Avatar
-                alt="Remy Sharp"
-                src="/avatar.png"
-                className={classes.imagedesktop}
-              />
-              <Card
-                style={{
-                  width: 500,
-                  borderBottomRightRadius: 30,
-                  borderBottomLeftRadius: 30,
-                  borderTopRightRadius: 30,
-                  marginLeft: 10,
-                }}
-                elevation={4}
-              >
-                <Typography style={{ padding: 10 }}>
-                  It is a long established fact that a reader will be
-                  distracted.
-                </Typography>
-              </Card>
-            </div>
+
             <div style={{ display: "flex", float: "right", marginTop: 20 }}>
               <Card
                 style={{
-                  width: 500,
+                  width: 200,
                   borderBottomRightRadius: 30,
                   borderBottomLeftRadius: 30,
                   borderTopLeftRadius: 30,
@@ -344,57 +333,21 @@ function ChatSection(props) {
               <Avatar
                 alt="Remy Sharp"
                 src="/avatar.png"
-                className={classes.imagedesktop}
-              />
-            </div>
-            <div style={{ display: "flex", marginTop: 130 }}>
-              <Avatar
-                alt="Remy Sharp"
-                src="/avatar.png"
-                className={classes.imagedesktop}
-              />
-              <Card
-                style={{
-                  width: 500,
-                  borderBottomRightRadius: 30,
-                  borderBottomLeftRadius: 30,
-                  borderTopRightRadius: 30,
-                  marginLeft: 10,
-                }}
-                elevation={4}
-              >
-                <Typography style={{ padding: 10 }}>
-                  as opposed to using 'Content here.
-                </Typography>
-              </Card>
-            </div>
-            <div style={{ display: "flex", float: "right", marginTop: 20 }}>
-              <Card
-                style={{
-                  width: 500,
-                  borderBottomRightRadius: 30,
-                  borderBottomLeftRadius: 30,
-                  borderTopLeftRadius: 30,
-                  marginLeft: 20,
-                  backgroundColor: "#a9a9a9",
-                  marginRight: 10,
-                }}
-                elevation={4}
-              >
-                <Typography style={{ padding: 10 }}>
-                  It is a long established fact that a reader will be distracted
-                  by its layout.
-                </Typography>
-              </Card>
-              <Avatar
-                alt="Remy Sharp"
-                src="/avatar.png"
-                className={classes.imagedesktop}
+                className={classes.imageMob}
               />
             </div>
           </Card>
         </div>
-        <div style={{ marginTop: 20, display: "flex" }}>
+        <div
+          style={{
+            marginTop: 20,
+            display: "flex",
+            position: "fixed",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+          }}
+        >
           <TextField
             style={{ width: "90%", borderRadius: 50 }}
             id="outlined-required"

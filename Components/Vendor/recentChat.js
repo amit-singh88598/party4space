@@ -214,7 +214,15 @@ function RecentChat(props) {
                 onClose={handleClose}
                 TransitionComponent={Transition}
               >
-                <AppBar className={classes.appBar} position="fixed">
+                <AppBar
+                  style={{
+                    position: "fixed",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                  }}
+                  className={classes.appBar}
+                >
                   <Toolbar>
                     <IconButton
                       edge="start"

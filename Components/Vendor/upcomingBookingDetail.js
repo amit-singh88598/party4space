@@ -207,6 +207,7 @@ function UpcomingBookingDetail(props) {
                   variant="contained"
                   color="primary"
                   size="small"
+                  onClick={() => router.push("/Vendor/bookingDetails")}
                 >
                   Details
                 </Button>
