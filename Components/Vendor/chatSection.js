@@ -6,12 +6,13 @@ import {
   Divider,
   Avatar,
   Box,
+  TextField,
 } from "@material-ui/core";
 import React from "react";
 
 const useStyle = makeStyles((theme) => ({
   heading: {
-    fontSize: "2.2em",
+    fontSize: "2em",
     fontWeight: 600,
     paddingLeft: 20,
   },
@@ -22,12 +23,8 @@ const useStyle = makeStyles((theme) => ({
     borderRadius: 10,
   },
   imagedesktop: {
-    width: theme.spacing(10),
-    height: theme.spacing(10),
-  },
-  image: {
-    width: 70,
-    height: 80,
+    width: theme.spacing(8),
+    height: theme.spacing(8),
   },
   breakpoints: {
     marginTop: 10,
@@ -50,44 +47,24 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const ChatDetail = [
-  {
-    img1: "/hotel1.jpg",
-    name: "Akash Kumar",
-    message:
-      "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consectetur ",
-  },
-  {
-    img1: "/hotel2.jpg",
-    name: "Manish bhai",
-    message:
-      "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet ",
-  },
-  {
-    img1: "/hotel6.jpg",
-    name: "Amit Bhai",
-    message:
-      "Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amett consectetur",
-  },
-];
-
 function ChatSection(props) {
   const classes = useStyle();
   return (
     <div>
-      <div style={{ marginTop: 50 }}>
+      <div>
         <div
           style={{
             display: "flex",
             justifyContent: "center",
-            margin: 20,
+            margin: 10,
+            marginTop: 50,
           }}
         >
           <Typography className={classes.heading}>Amit Singh</Typography>
         </div>
         <Divider />
         <div className={classes.scroll} id="scroller">
-          <Card style={{ padding: 20 }}>
+          <Card style={{ padding: 20 }} elevation={0}>
             <div style={{ display: "flex" }}>
               <Avatar
                 alt="Remy Sharp"
@@ -106,10 +83,7 @@ function ChatSection(props) {
               >
                 <Typography style={{ padding: 10 }}>
                   It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
+                  by the readable content of a page.
                 </Typography>
               </Card>
             </div>
@@ -154,11 +128,8 @@ function ChatSection(props) {
                 elevation={4}
               >
                 <Typography style={{ padding: 10 }}>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here.
+                  It is a long established fact that a reader will be
+                  distracted.
                 </Typography>
               </Card>
             </div>
@@ -203,11 +174,7 @@ function ChatSection(props) {
                 elevation={4}
               >
                 <Typography style={{ padding: 10 }}>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here.
+                  as opposed to using 'Content here.
                 </Typography>
               </Card>
             </div>
@@ -236,6 +203,15 @@ function ChatSection(props) {
               />
             </div>
           </Card>
+        </div>
+        <div style={{ marginTop: 20 }}>
+          <TextField
+            style={{ width: "90%", borderRadius: 50 }}
+            id="outlined-required"
+            fullWidth
+            placeholder="Type a message"
+            variant="outlined"
+          />
         </div>
       </div>
     </div>

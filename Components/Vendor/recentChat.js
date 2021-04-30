@@ -10,6 +10,9 @@ import {
 import React from "react";
 
 const useStyle = makeStyles((theme) => ({
+  root: {
+    height: "100vh",
+  },
   heading: {
     fontSize: "2.2em",
     fontWeight: 600,
@@ -75,7 +78,7 @@ function RecentChat(props) {
   const classes = useStyle();
   return (
     <div>
-      <Card elevation={4}>
+      <Card elevation={0} className={classes.root}>
         <div>
           <Typography
             style={{
@@ -135,7 +138,7 @@ function RecentChat(props) {
                     <Grid item xs={2} sm={2}>
                       <Avatar
                         alt="Remy Sharp"
-                        src="/avatar.png"
+                        src={item.img1}
                         className={classes.image}
                       />
                     </Grid>
@@ -145,7 +148,7 @@ function RecentChat(props) {
                           style={{ fontSize: "1.4em", fontWeight: 600 }}
                           gutterBottom
                         >
-                          Akash Kumar
+                          {item.name}
                         </Typography>
 
                         <div style={{ width: 200, whiteSpace: "nowrap" }}>
@@ -156,12 +159,7 @@ function RecentChat(props) {
                             overflow="hidden"
                           >
                             <Typography variant="subtitle1">
-                              Lorem ipsum dolor sit amet consectetur adipisicing
-                              elit. Maxime mollitia, molestiae quas vel sint
-                              commodi repudiandae consequuntur voluptatum
-                              laborum numquam blanditiis harum quisquam eius sed
-                              odit fugiat iusto fuga praesentium optio, eaque
-                              rerum! Provident similique accusantium nemo autem.
+                              {item.message}
                             </Typography>
                           </Box>
                         </div>
