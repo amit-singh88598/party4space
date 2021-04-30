@@ -7,6 +7,7 @@ import {
   Avatar,
   Box,
   TextField,
+  Button,
 } from "@material-ui/core";
 import React from "react";
 
@@ -45,13 +46,28 @@ const useStyle = makeStyles((theme) => ({
     overflowY: "scroll",
     height: 550,
   },
+
+  // breakpoints
+
+  desktopBreakpoint: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+  mobBreakpoint: {
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
 }));
 
 function ChatSection(props) {
   const classes = useStyle();
   return (
     <div>
-      <div>
+      {/* Desktop Style Starts here */}
+
+      <div className={classes.desktopBreakpoint}>
         <div
           style={{
             display: "flex",
@@ -204,7 +220,7 @@ function ChatSection(props) {
             </div>
           </Card>
         </div>
-        <div style={{ marginTop: 20 }}>
+        <div style={{ marginTop: 20, display: "flex" }}>
           <TextField
             style={{ width: "90%", borderRadius: 50 }}
             id="outlined-required"
@@ -212,8 +228,192 @@ function ChatSection(props) {
             placeholder="Type a message"
             variant="outlined"
           />
+          <Button
+            style={{ marginLeft: 10 }}
+            variant="contained"
+            size="small"
+            color="primary"
+          >
+            Send
+          </Button>
         </div>
       </div>
+
+      {/* Desktop Style Ends here */}
+
+      {/* Mobile Style Starts here */}
+
+      <div className={classes.mobBreakpoint}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Typography className={classes.heading}>Amit Singh</Typography>
+        </div>
+        <Divider />
+        <div className={classes.scroll} id="scroller">
+          <Card style={{ padding: 20 }} elevation={0}>
+            <div style={{ display: "flex" }}>
+              <Avatar
+                alt="Remy Sharp"
+                src="/avatar.png"
+                className={classes.imagedesktop}
+              />
+              <Card
+                style={{
+                  width: 500,
+                  borderBottomRightRadius: 30,
+                  borderBottomLeftRadius: 30,
+                  borderTopRightRadius: 30,
+                  marginLeft: 10,
+                }}
+                elevation={4}
+              >
+                <Typography style={{ padding: 10 }}>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page.
+                </Typography>
+              </Card>
+            </div>
+            <div style={{ display: "flex", float: "right", marginTop: 20 }}>
+              <Card
+                style={{
+                  width: 500,
+                  borderBottomRightRadius: 30,
+                  borderBottomLeftRadius: 30,
+                  borderTopLeftRadius: 30,
+                  marginLeft: 20,
+                  backgroundColor: "#a9a9a9",
+                  marginRight: 10,
+                }}
+                elevation={4}
+              >
+                <Typography style={{ padding: 10 }}>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its layout.
+                </Typography>
+              </Card>
+              <Avatar
+                alt="Remy Sharp"
+                src="/avatar.png"
+                className={classes.imagedesktop}
+              />
+            </div>
+            <div style={{ display: "flex", marginTop: 130 }}>
+              <Avatar
+                alt="Remy Sharp"
+                src="/avatar.png"
+                className={classes.imagedesktop}
+              />
+              <Card
+                style={{
+                  width: 500,
+                  borderBottomRightRadius: 30,
+                  borderBottomLeftRadius: 30,
+                  borderTopRightRadius: 30,
+                  marginLeft: 10,
+                }}
+                elevation={4}
+              >
+                <Typography style={{ padding: 10 }}>
+                  It is a long established fact that a reader will be
+                  distracted.
+                </Typography>
+              </Card>
+            </div>
+            <div style={{ display: "flex", float: "right", marginTop: 20 }}>
+              <Card
+                style={{
+                  width: 500,
+                  borderBottomRightRadius: 30,
+                  borderBottomLeftRadius: 30,
+                  borderTopLeftRadius: 30,
+                  marginLeft: 20,
+                  backgroundColor: "#a9a9a9",
+                  marginRight: 10,
+                }}
+                elevation={4}
+              >
+                <Typography style={{ padding: 10 }}>
+                  It is a long established fact that a reader will be distracted
+                  by its layout.
+                </Typography>
+              </Card>
+              <Avatar
+                alt="Remy Sharp"
+                src="/avatar.png"
+                className={classes.imagedesktop}
+              />
+            </div>
+            <div style={{ display: "flex", marginTop: 130 }}>
+              <Avatar
+                alt="Remy Sharp"
+                src="/avatar.png"
+                className={classes.imagedesktop}
+              />
+              <Card
+                style={{
+                  width: 500,
+                  borderBottomRightRadius: 30,
+                  borderBottomLeftRadius: 30,
+                  borderTopRightRadius: 30,
+                  marginLeft: 10,
+                }}
+                elevation={4}
+              >
+                <Typography style={{ padding: 10 }}>
+                  as opposed to using 'Content here.
+                </Typography>
+              </Card>
+            </div>
+            <div style={{ display: "flex", float: "right", marginTop: 20 }}>
+              <Card
+                style={{
+                  width: 500,
+                  borderBottomRightRadius: 30,
+                  borderBottomLeftRadius: 30,
+                  borderTopLeftRadius: 30,
+                  marginLeft: 20,
+                  backgroundColor: "#a9a9a9",
+                  marginRight: 10,
+                }}
+                elevation={4}
+              >
+                <Typography style={{ padding: 10 }}>
+                  It is a long established fact that a reader will be distracted
+                  by its layout.
+                </Typography>
+              </Card>
+              <Avatar
+                alt="Remy Sharp"
+                src="/avatar.png"
+                className={classes.imagedesktop}
+              />
+            </div>
+          </Card>
+        </div>
+        <div style={{ marginTop: 20, display: "flex" }}>
+          <TextField
+            style={{ width: "90%", borderRadius: 50 }}
+            id="outlined-required"
+            fullWidth
+            placeholder="Type a message"
+            variant="outlined"
+          />
+          <Button
+            style={{ marginLeft: 10 }}
+            variant="contained"
+            size="small"
+            color="primary"
+          >
+            Send
+          </Button>
+        </div>
+      </div>
+
+      {/* Mobile Style Ends here */}
     </div>
   );
 }

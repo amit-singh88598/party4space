@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Grid,
   makeStyles,
@@ -7,7 +8,18 @@ import {
   Avatar,
   Box,
 } from "@material-ui/core";
-import React from "react";
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItem from "@material-ui/core/ListItem";
+import List from "@material-ui/core/List";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import Slide from "@material-ui/core/Slide";
+import { MoreVert } from "@material-ui/icons";
+import ChatSection from "./chatSection";
 
 const useStyle = makeStyles((theme) => ({
   root: {
@@ -29,8 +41,8 @@ const useStyle = makeStyles((theme) => ({
     height: theme.spacing(10),
   },
   image: {
-    width: 70,
-    height: 80,
+    width: theme.spacing(8),
+    height: theme.spacing(8),
   },
   breakpoints: {
     marginTop: 10,
@@ -50,6 +62,16 @@ const useStyle = makeStyles((theme) => ({
   scroll: {
     overflowY: "scroll",
     height: 550,
+  },
+
+  ///
+
+  appBar: {
+    position: "relative",
+  },
+  title: {
+    marginLeft: theme.spacing(2),
+    flex: 1,
   },
 }));
 
@@ -74,8 +96,21 @@ const ChatDetail = [
   },
 ];
 
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
+
 function RecentChat(props) {
   const classes = useStyle();
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <div>
       <Card elevation={0} className={classes.root}>
@@ -83,7 +118,7 @@ function RecentChat(props) {
           <Typography
             style={{
               marginTop: 50,
-              marginBottom: 10,
+              marginBottom: 6,
             }}
             className={classes.heading}
           >
@@ -133,7 +168,11 @@ function RecentChat(props) {
                 </div>
               ))}
               {ChatDetail.map((item, index) => (
-                <div className={classes.mobbreakpoint} key={index}>
+                <div
+                  className={classes.mobbreakpoint}
+                  key={index}
+                  onClick={handleClickOpen}
+                >
                   <Grid container spacing={1}>
                     <Grid item xs={2} sm={2}>
                       <Avatar
@@ -169,6 +208,34 @@ function RecentChat(props) {
                   <Divider />
                 </div>
               ))}
+              <Dialog
+                fullScreen
+                open={open}
+                onClose={handleClose}
+                TransitionComponent={Transition}
+              >
+                <AppBar className={classes.appBar} position="fixed">
+                  <Toolbar>
+                    <IconButton
+                      edge="start"
+                      color="inherit"
+                      onClick={handleClose}
+                      aria-label="close"
+                    >
+                      <CloseIcon />
+                    </IconButton>
+                    <Typography variant="h6" className={classes.title}>
+                      Akash Kumar
+                    </Typography>
+                    <IconButton edge="start" color="inherit" aria-label="close">
+                      <MoreVert />
+                    </IconButton>
+                  </Toolbar>
+                </AppBar>
+                <List>
+                  <ChatSection />
+                </List>
+              </Dialog>
             </div>
           </Card>
         </div>
