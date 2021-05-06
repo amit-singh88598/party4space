@@ -4,16 +4,23 @@ import {
   Card,
   Container,
   Grid,
-  IconButton,
   InputAdornment,
   makeStyles,
+  Divider,
   TextField,
+  IconButton,
   Typography,
 } from "@material-ui/core";
 import axios from "axios";
 import React, { useState } from "react";
 import { regxPrimaryNumber, regxPassword } from "../../regular-Expression";
-import { Visibility, VisibilityOff } from "@material-ui/icons";
+import {
+  Facebook,
+  LinkedIn,
+  Twitter,
+  Visibility,
+  VisibilityOff,
+} from "@material-ui/icons";
 import { useRouter } from "next/router";
 // import { useAuth } from "../auth";
 import { Alert } from "@material-ui/lab";
@@ -22,21 +29,25 @@ import Header from "../../Layouts/header";
 // import { getProfile } from "../actions/vendor";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    marginBottom: 50,
+  },
   mobBreakpoint: {
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
   card: {
-    borderStyle: "outset ",
-    borderWidth: 10,
-    borderBlockStartColor: "black",
-    borderLeftColor: "black",
+    // borderStyle: "outset ",
+    // borderWidth: 10,
+    // borderBlockStartColor: "black",
+    // borderLeftColor: "black",
     width: "100%",
+    height: "100%",
     borderTop: 0,
     borderLeft: 0,
     marginTop: 40,
-    borderRadius: 30,
+    // borderRadius: 30,
     padding: 15,
     [theme.breakpoints.up("md")]: {
       width: 430,
@@ -46,22 +57,21 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   title: {
-    textAlign: "center",
-    fontSize: "2.2em",
+    fontSize: "1.4em",
     fontWeight: 500,
-    display: "flex",
-    justifyContent: "center",
   },
   btnStyle: {
-    marginTop: 8,
+    marginTop: 20,
     fontSize: "1.2em",
   },
-
   logo: {
     width: theme.spacing(15),
     height: theme.spacing(15),
   },
-  imgStyle: { marginLeft: 100, marginTop: 50 },
+  imgStyle: {
+    marginLeft: 100,
+    marginTop: 50,
+  },
   contentCenter: {
     display: "flex",
     justifyContent: "center",
@@ -155,7 +165,7 @@ function SignUp(props) {
   };
 
   return (
-    <div>
+    <div className={classes.root}>
       <Grid container spacing={0}>
         <Grid item xs={12} sm={6}>
           <div className={classes.imgStyle}>
@@ -163,15 +173,50 @@ function SignUp(props) {
           </div>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <div className={classes.root}>
+          <div>
             <Container component="main">
               <div className={classes.contentCenter}>
                 <Grid item xs={12} sm={12}>
                   <div style={{ display: "flex", justifyContent: "center" }}>
-                    <Card className={classes.card} elevation={2}>
-                      <Typography className={classes.title}>
-                        Sign Up !
+                    <Card className={classes.card} elevation={0}>
+                      <div
+                        style={{
+                          display: "flex",
+                        }}
+                      >
+                        <Typography className={classes.title}>
+                          SignUp with
+                        </Typography>
+                        <div style={{ marginTop: -5, marginLeft: 20 }}>
+                          <IconButton>
+                            <Facebook
+                              style={{ marginLeft: 10, marginRight: 10 }}
+                            />
+                          </IconButton>
+                          <IconButton>
+                            <LinkedIn
+                              style={{ marginLeft: 10, marginRight: 10 }}
+                            />
+                          </IconButton>
+                          <IconButton>
+                            <Twitter
+                              style={{ marginLeft: 10, marginRight: 10 }}
+                            />
+                          </IconButton>
+                        </div>
+                      </div>
+                      <Typography
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          marginTop: 20,
+                          fontSize: "1.6em",
+                          fontWeight: 500,
+                        }}
+                      >
+                        Or
                       </Typography>
+                      <Divider style={{ height: 3 }} />
                       <Grid container spacing={1} style={{ marginTop: 20 }}>
                         <Grid
                           item
@@ -180,7 +225,7 @@ function SignUp(props) {
                           className={classes.contentCenter}
                         >
                           <TextField
-                            // size="small"
+                            size="small"
                             id="outlined-basic"
                             variant="outlined"
                             className={classes.textFieldStyle}
@@ -205,7 +250,7 @@ function SignUp(props) {
                           className={classes.contentCenter}
                         >
                           <TextField
-                            // size="small"
+                            size="small"
                             id="outlined-basic"
                             variant="outlined"
                             className={classes.textFieldStyle}
@@ -231,7 +276,7 @@ function SignUp(props) {
                           className={classes.contentCenter}
                         >
                           <TextField
-                            // size="small"
+                            size="small"
                             id="outlined-basic"
                             variant="outlined"
                             color="primary"
@@ -255,7 +300,7 @@ function SignUp(props) {
                           className={classes.contentCenter}
                         >
                           <TextField
-                            // size="small"
+                            size="small"
                             id="outlined-basic"
                             variant="outlined"
                             onChange={(event) => {
@@ -280,7 +325,7 @@ function SignUp(props) {
                           className={classes.contentCenter}
                         >
                           <TextField
-                            // size="small"
+                            size="small"
                             variant="outlined"
                             onChange={(event) => {
                               setError({ passwordErr: false });
@@ -374,7 +419,7 @@ function SignUp(props) {
                           <Button
                             variant="contained"
                             className={classes.btnStyle}
-                            size="large"
+                            size="small"
                             fullWidth
                             color="primary"
                             onClick={handleChange}

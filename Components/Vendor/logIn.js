@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   Container,
+  Divider,
   Grid,
   IconButton,
   InputAdornment,
@@ -14,7 +15,13 @@ import {
 import axios from "axios";
 import React, { useState } from "react";
 import { regxPrimaryNumber, regxPassword } from "../../regular-Expression";
-import { Visibility, VisibilityOff } from "@material-ui/icons";
+import {
+  Facebook,
+  LinkedIn,
+  Twitter,
+  Visibility,
+  VisibilityOff,
+} from "@material-ui/icons";
 import { useRouter } from "next/router";
 // import { useAuth } from "../auth";
 import { Alert } from "@material-ui/lab";
@@ -23,21 +30,24 @@ import Header from "../../Layouts/header";
 // import { getProfile } from "../actions/vendor";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    marginBottom: 50,
+  },
   mobBreakpoint: {
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
   card: {
-    borderStyle: "outset ",
-    borderWidth: 10,
-    borderBlockStartColor: "black",
-    borderLeftColor: "black",
+    // borderStyle: "outset ",
+    // borderWidth: 10,
+    // borderBlockStartColor: "black",
+    // borderLeftColor: "black",
     width: "100%",
     height: 440,
-    borderTop: 0,
-    borderLeft: 0,
-    borderRadius: 30,
+    // borderTop: 0,
+    // borderLeft: 0,
+    // borderRadius: 30,
     padding: 15,
     marginTop: 60,
     [theme.breakpoints.up("md")]: {
@@ -48,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   btnStyle: {
+    marginTop: 20,
     fontSize: "1.2em",
   },
   textStyle: {
@@ -134,7 +145,7 @@ function LogIn(props) {
   };
 
   return (
-    <div>
+    <div className={classes.root}>
       <Grid container spacing={0}>
         <Grid item xs={12} sm={6}>
           <div style={{ marginTop: 50, marginLeft: 100 }}>
@@ -143,16 +154,12 @@ function LogIn(props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <div>
-            <div className={classes.root}>
+            <div>
               <Container>
                 <div>
                   <Grid item xs={12} sm={12} elevation={4}>
                     <div style={{ display: "flex", justifyContent: "center" }}>
-                      <Card
-                        elevation={3}
-                        className={classes.card}
-                        elevation={2}
-                      >
+                      <Card elevation={0} className={classes.card}>
                         <Snackbar
                           open={loginError ? true : false}
                           autoHideDuration={6000}
@@ -166,17 +173,49 @@ function LogIn(props) {
                             {loginError && loginError}
                           </Alert>
                         </Snackbar>
-                        <Typography
+                        <div
                           style={{
-                            textAlign: "center",
-                            fontSize: "2.2em",
                             display: "flex",
-                            fontWeight: 500,
-                            justifyContent: "center",
                           }}
                         >
-                          Login !
+                          <Typography
+                            style={{
+                              fontSize: "1.4em",
+                              fontWeight: 500,
+                            }}
+                          >
+                            Login with
+                          </Typography>
+                          <div style={{ marginTop: -5, marginLeft: 20 }}>
+                            <IconButton>
+                              <Facebook
+                                style={{ marginLeft: 10, marginRight: 10 }}
+                              />
+                            </IconButton>
+                            <IconButton>
+                              <LinkedIn
+                                style={{ marginLeft: 10, marginRight: 10 }}
+                              />
+                            </IconButton>
+                            <IconButton>
+                              <Twitter
+                                style={{ marginLeft: 10, marginRight: 10 }}
+                              />
+                            </IconButton>
+                          </div>
+                        </div>
+                        <Typography
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            marginTop: 20,
+                            fontSize: "1.6em",
+                            fontWeight: 500,
+                          }}
+                        >
+                          Or
                         </Typography>
+                        <Divider style={{ height: 3 }} />
                         <Grid container spacing={2} style={{ marginTop: 20 }}>
                           <Grid
                             item
@@ -277,7 +316,7 @@ function LogIn(props) {
                               cursor: "pointer",
                             }}
                           >
-                            Forgot your password?
+                            Forgot Password?
                           </a>
                           <Grid
                             item
@@ -299,7 +338,7 @@ function LogIn(props) {
                                   marginTop: 20,
                                 }}
                               >
-                                Don't have account? SignUp
+                                Don't have an account? SignUp
                               </a>
                             </Box>
                           </Grid>

@@ -238,7 +238,7 @@ export default function VendorHeader(props) {
       </div>
       <Divider />
       {/* {props.menuOption.map((item, index) => ( */}
-      <MenuItem onClick={() => router.push("#")}>
+      <MenuItem onClick={() => router.push("/Vendor/profile")}>
         <PermIdentity style={{ marginRight: 10 }} />
         <Typography variant="subtitle2">{"My Profile"}</Typography>
       </MenuItem>
