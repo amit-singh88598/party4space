@@ -10,6 +10,7 @@ import {
 } from "@material-ui/icons";
 import React from "react";
 import Map from "./map";
+import { useRouter } from "next/router";
 
 const useStyles = makeStyles((theme) => ({
   addressStyle: {
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
 function SpaceDetail(props) {
   const classes = useStyles();
+  const router = useRouter();
   return (
     <div>
       <Card className={classes.cardStyle} elevation={4}>
@@ -129,6 +131,7 @@ function SpaceDetail(props) {
           style={{ display: "flex", justifyContent: "center", marginTop: 50 }}
         >
           <Button
+            onClick={() => router.push("/Vendor/editSpaceDetails")}
             style={{ width: 150, fontSize: "1.2em", borderRadius: 10 }}
             variant="contained"
             color="primary"
