@@ -135,11 +135,6 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10,
     marginRight: 10,
   },
-  //   largeAvatar: {
-  //     width: theme.spacing(6),
-  //     height: theme.spacing(6),
-  //     align: "center",
-  //   },
   sidebarItems: {
     "&:hover": {
       width: drawerWidth,

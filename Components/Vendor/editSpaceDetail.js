@@ -1,11 +1,31 @@
 import React from "react";
-import { Button, Card, Grid, TextField, Typography } from "@material-ui/core";
+import {
+  Button,
+  Card,
+  Grid,
+  makeStyles,
+  TextField,
+  Typography,
+} from "@material-ui/core";
 import { Autocomplete } from "@material-ui/lab";
 
 import Checkbox from "@material-ui/core/Checkbox";
 import CheckBoxOutlineBlankIcon from "@material-ui/icons/CheckBoxOutlineBlank";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import { AddAPhoto, AddLocation } from "@material-ui/icons";
+import { Classnames } from "react-alice-carousel";
+
+const useStyle = makeStyles((theme) => ({
+  justifyCenter: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  cardStyle: {
+    padding: 20,
+    margin: 15,
+    paddingBottom: 20,
+  },
+}));
 
 const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
 const checkedIcon = <CheckBoxIcon fontSize="small" />;
@@ -22,16 +42,13 @@ const top100Films = [
 ];
 
 function EditSpaceDetail(props) {
+  const classes = useStyle();
   return (
     <div style={{ marginTop: 50 }}>
-      <Card
-        elevation={4}
-        style={{ padding: 20, margin: 20, paddingBottom: 100 }}
-      >
+      <Card elevation={4} className={classes.cardStyle}>
         <div
+          className={classes.justifyCenter}
           style={{
-            display: "flex",
-            justifyContent: "center",
             marginBottom: 40,
           }}
         >
@@ -142,7 +159,12 @@ function EditSpaceDetail(props) {
                 </React.Fragment>
               )}
               renderInput={(params) => (
-                <TextField {...params} variant="outlined" label="Amenities" />
+                <TextField
+                  {...params}
+                  required
+                  variant="outlined"
+                  label="Amenities"
+                />
               )}
             />
           </Grid>
@@ -182,6 +204,11 @@ function EditSpaceDetail(props) {
             </Button>
           </Grid>
         </Grid>
+        <div className={classes.justifyCenter} style={{ marginTop: 40 }}>
+          <Button style={{ width: 150 }} variant="contained" color="primary">
+            Save
+          </Button>
+        </div>
       </Card>
     </div>
   );
